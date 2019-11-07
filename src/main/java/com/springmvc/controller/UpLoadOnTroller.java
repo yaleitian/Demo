@@ -34,6 +34,6 @@ public class UpLoadOnTroller {
         userService.beginUpload(file);
         System.out.println("upload end");
         //返回成功页面
-        return "/successfile";
+        return "successfile";
     }
 }

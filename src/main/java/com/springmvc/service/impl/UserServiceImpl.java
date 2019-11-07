@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
         if (!file.isEmpty()) {
             logger.debug( "upload file : {}" + file.getOriginalFilename() );
             try {
-                FileUtils.copyInputStreamToFile(file.getInputStream(),new File( "/Users/lees/Downloads/work/ ",System.currentTimeMillis() + file.getOriginalFilename() ));
+                FileUtils.copyInputStreamToFile(file.getInputStream(),new File( "/Users/tianyalei/Downloads/work/ ",System.currentTimeMillis() + file.getOriginalFilename() ));
             } catch (IOException e) {
                 e.printStackTrace();
             }

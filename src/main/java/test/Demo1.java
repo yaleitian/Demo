@@ -1,5 +1,8 @@
 package test;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Created by Vitelon on 2017/3/10.
  */
@@ -14,10 +17,17 @@ public class Demo1 {
         j = ++b;
         k = c--;
         l = --d;
-        System.out.println("i = "+ i +",a ="+ a); //i=4, a=5
-        System.out.println("j = "+ j +",b ="+ b); //j=5, b=5
-        System.out.println("k = "+ k +",c ="+ c); //k=4, c=3
-        System.out.println("l = "+ l +",d ="+ d); //l=3, d=3
+        //i=4, a=5
+        System.out.println("i = "+ i +",a ="+ a);
+        //j=5, b=5
+        System.out.println("j = "+ j +",b ="+ b);
+        //k=4, c=3
+        System.out.println("k = "+ k +",c ="+ c);
+        //l=3, d=3
+        System.out.println("l = "+ l +",d ="+ d);
         //++--运算符,在前时，是先增减再赋值；在后时，是先赋值再增减。
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-context.xml");
+        TestBean bean = (TestBean) applicationContext.getBean( "test" );
+        bean.test();
     }
 }
