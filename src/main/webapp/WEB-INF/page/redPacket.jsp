@@ -26,10 +26,3 @@
 	</script>
 </head>
 </html>
-</%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
-    <title>参数</title>
-<%-- 加载Query文件 >
