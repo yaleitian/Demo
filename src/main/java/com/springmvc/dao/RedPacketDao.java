@@ -20,4 +20,10 @@ public interface RedPacketDao {
      */
     public int decreaseRedPacket(Long id);
 
+    /***
+     * 使用for update语句加锁.
+     * @param id ——红包id
+     * @return 红包信息
+     */
+    public RedPacket getRedPacketForUpdate(Long id);
 }
