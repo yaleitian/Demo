@@ -26,4 +26,6 @@ public interface RedPacketDao {
      * @return 红包信息
      */
     public RedPacket getRedPacketForUpdate(Long id);
+
+    int decreaseRedPacketForVersion(Long redPacketId, Integer version);
 }

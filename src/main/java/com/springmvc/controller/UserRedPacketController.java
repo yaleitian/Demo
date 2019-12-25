@@ -30,4 +30,17 @@ public class UserRedPacketController {
         retMap.put( "message", flag ? "抢红包成功" : "抢红包失败" );
         return retMap;
     }
+    //乐观锁请求，使用时修改javascript的请求路径
+    @RequestMapping(value = "/grapRedPacketForVersion")
+    @ResponseBody
+    public Map<String, Object> grapRedPacketForVersion(Long redPacketId, Long userId) {
+        // 抢红包
+        int result = userRedPacketService.grapRedPacketForVersion(redPacketId, userId);
+        Map<String, Object> retMap = new HashMap<String, Object>();
+        boolean flag = result > 0;
+        retMap.put("success", flag);
+        retMap.put("message", flag ? "抢红包成功" : "抢红包失败");
+        return retMap;
+    }
+
 }
