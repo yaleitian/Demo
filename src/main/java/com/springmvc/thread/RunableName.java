@@ -4,6 +4,12 @@ package com.springmvc.thread;
  * @author tianyalei
  */
 public class RunableName {
+    static int sum = 0;
+    /**
+     * 创建一个静态钥匙
+     * 值是任意的
+     */
+    static Object ob = "aa";
 
     public static final class AccumRunnable implements Runnable {
 
@@ -20,16 +26,19 @@ public class RunableName {
         @Override
         public void run() {
             result = 0;
-            try {
-                for (int i = begin; i <= end; i++) {
-                    result += i;
-                    Thread.sleep(100);
+            synchronized (ob) {
+
+                try {
+                    for (int i = begin; i <= end; i++) {
+                        result += i;
+                        Thread.sleep(100);
+                    }
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace(System.err);
                 }
-            } catch (InterruptedException ex) {
-                ex.printStackTrace(System.err);
+                System.out.printf("(%s) - 运行结束，结果为 %d\n",
+                        Thread.currentThread().getName(), result);
             }
-            System.out.printf("(%s) - 运行结束，结果为 %d\n",
-                    Thread.currentThread().getName(), result);
         }
 
         public int getResult() {
