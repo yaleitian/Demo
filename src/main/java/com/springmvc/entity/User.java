@@ -16,7 +16,7 @@ public class User implements Serializable {
 	private String username;
 	/**密码*/
 	private String password;
-	/**姓名*/
+	/**性别*/
 	private String sex;
 
 	public User() {
