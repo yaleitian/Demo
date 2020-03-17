@@ -1,5 +1,6 @@
 package test;
 
+import com.springmvc.dao.UserDao;
 import com.springmvc.entity.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -58,8 +59,12 @@ public class MybatisFirst {
 
         // 通过工厂得到SqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        // list中的user和映射文件中resultType所指定的类型一致
+        // Mapper接口发送sql
+        UserDao userDao = sqlSession.getMapper( UserDao.class );
+        User user = userDao.findUserById( 1 );
+        // list中的user和映射文件中resultType所指定的类型一致 SqlSession发送sql
         List<User> list = sqlSession.selectList("com.springmvc.dao.UserDao.findUserByName", "abc");
+        System.out.println(user);
         System.out.println(list);
         sqlSession.close();
 

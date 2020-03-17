@@ -28,7 +28,7 @@
 	</select>
 
 	<select id="findUserById" parameterType="int" resultType="com.springmvc.entity.User">
-        SELECT * FROM  t_user  WHERE id=#{value}
+        SELECT * FROM  t_user  WHERE id=#{id}
     </select>
 
 	<!-- 根据用户名称模糊查询用户信息，可能返回多条

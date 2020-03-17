@@ -24,6 +24,14 @@ public interface UserDao {
 
     /**
      * 	Created by yalei.tian on 2018-01-16
+     * 	根据用户id
+     * @param id
+     * @return
+     */
+    public User findUserById(@Param("id") Integer id);
+
+    /**
+     * 	Created by yalei.tian on 2018-01-16
      * 	获取用户
      * @return
      */
