@@ -51,4 +51,14 @@ public class Bank {
         System.out.println("D取走了" + money + "还剩下" + (Bank.money));
     }
 
+    /**
+     * PAYONEER 参数是每次取走的钱
+     * @param money
+     */
+    public synchronized void PAYONEER(int money) {
+        //取钱后总数减少
+        Bank.money -= money;
+        System.out.println("D取走了" + money + "还剩下" + (Bank.money));
+    }
+
 }
