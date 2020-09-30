@@ -1,7 +1,7 @@
 package test;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Created by Vitelon on 2017/3/10.
@@ -26,8 +26,14 @@ public class Demo1 {
         //l=3, d=3
         System.out.println("l = "+ l +",d ="+ d);
         //++--运算符,在前时，是先增减再赋值；在后时，是先赋值再增减。
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-context.xml");
-        TestBean bean = (TestBean) applicationContext.getBean( "test" );
-        bean.test();
+        //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-context.xml");
+        //TestBean bean = (TestBean) applicationContext.getBean( "test" );
+        //bean.test();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set( Calendar.DAY_OF_MONTH, calendar.getActualMaximum( Calendar.DAY_OF_MONTH ) );
+        String  lastDay = simpleDateFormat.format(calendar.getTime());
+        System.out.println("lastDay:" + lastDay);
     }
 }
