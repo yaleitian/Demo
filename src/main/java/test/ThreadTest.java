@@ -1,11 +1,8 @@
 package test;
 
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.springmvc.thread.*;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -75,7 +72,7 @@ public class ThreadTest {
     }
 
     @Test
-    public void testRunableName() throws InterruptedException {
+    public void testRunableName() throws InterruptedException {/*
 
         System.out.println("使用线程池运行 Runnable 任务：");
 
@@ -109,7 +106,7 @@ public class ThreadTest {
         }
 
         System.out.println("Total: " + total);
-    }
+    */}
 
     /**
      * 四个人ABCD通过一个账户A在柜台取钱和B在ATM机取钱C在ALIPAY花钱D在PAYPAL花钱

@@ -1,8 +1,5 @@
 package test;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 /**
  * Created by Vitelon on 2017/3/10.
  */
@@ -29,11 +26,12 @@ public class Demo1 {
         //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-context.xml");
         //TestBean bean = (TestBean) applicationContext.getBean( "test" );
         //bean.test();
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar calendar = Calendar.getInstance();
-        calendar.set( Calendar.DAY_OF_MONTH, calendar.getActualMaximum( Calendar.DAY_OF_MONTH ) );
-        String  lastDay = simpleDateFormat.format(calendar.getTime());
-        System.out.println("lastDay:" + lastDay);
+        String s = ",123456,";
+        System.out.println(s.substring( 1,6 ));
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //Calendar calendar = Calendar.getInstance();
+        //calendar.set( Calendar.DAY_OF_MONTH, calendar.getActualMaximum( Calendar.DAY_OF_MONTH ) );
+        //String  lastDay = simpleDateFormat.format(calendar.getTime());
+        //System.out.println("lastDay:" + lastDay);
     }
 }
