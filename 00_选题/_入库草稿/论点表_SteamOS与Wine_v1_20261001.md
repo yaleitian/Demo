@@ -1,0 +1,137 @@
+# #44 SteamOS／Wine／Proton · 论点表 v1
+
+> 日期：2026-10-01 ｜ 入口：**思路**（作者没写思路，思路就是 10/1 给 EP04 观众的那条回复，原文见下）｜ 选题库 #44，未打分，未开期
+> 🔴 **这是论点表，不是稿。作者改过或说「可以写了」才往下写全文。**
+> 开期后本文件移入该期 `01_脚本/`，术语表那一节拆成 `EPxx_术语表_国内写法.md`。
+
+## 作者给的思路（原样）
+
+> 谢谢指正，这段视频里讲得太简单了。Proton 是从 Wine 分出来的，Valve 出了很多力，但底子确实是 Wine 多年攒下来的，SteamOS 本身也是在整个 Linux 生态上搭起来的。视频里一句"Valve 自己在中间架一层"就带过去了，看着像是 Valve 从零做出来的。
+> 这些写稿的时候本来想放进去，后来发现离这期的主题有点远，展开讲又太硬核，就决定留到之后专门做一期 SteamOS，把 Wine、Proton 和 Linux 社区这条线一起讲清楚。
+
+思路里四样东西的情况：
+
+| 要有的 | 有没有 | 现在怎么处理 |
+|---|---|---|
+| 一句话结论 | ✅ 「Valve 出了很多力，但底子是 Wine，SteamOS 是在整个 Linux 生态上搭起来的」 | 照用 |
+| 凭什么 | 一半：观众指出的事＋EP04 核查记录里记过的 Wine／DXVK | 其余是**模型补**的可查事实，表里逐条标 |
+| 观众一般怎么想 | ✅ 「看着像是 Valve 从零做出来的」 | 照用，这就是全片要掰的那个印象 |
+| 不碰什么 | 一半：「太硬核」不要；选题库记了「学习版」红线 | 模型补：不教装系统、不比帧数、不讲内核；EP04 讲过的 2012–2018 只带一句 |
+
+一句话结论（旁白版，模型按作者原话压的）：**Valve 架的那一层，最底下的东西不是它做的；它做的是出钱、装进 Steam、再卖一台机器。**
+
+---
+
+## 论点表
+
+格式：拍名 · 主张 · 依据 · 跟上一拍的关系 · 来源。依据没核过的标【待核】；要作者亲历的标【待补】。
+
+| # | 拍名 | 这一拍主张什么 | 依据 | 关系 | 来源 |
+|---|---|---|---|---|---|
+| 0 | **开场 · 比 Valve 还老** | 让 Steam Deck 跑 Windows 游戏的那层东西，1993 年就有了，比 Valve 成立早三年；上一期一句带过，观众指出来了 | Wine 始于 1993（Bob Amstadt）【待核：首版日期】；Valve 1996-08-24 成立 ✅（维基）；EP04 评论 ✅ | —— | 作者（评论回复）＋模型补 |
+| 1 | **1993 · 一个人要在 Linux 上打开 Windows 3.1** | Wine 一开始的目标就一件事：让 Windows 3.1 的程序在 Linux 上打开；1994 年起 Alexandre Julliard 接手，到今天还是他；做了十五年才到 1.0（2008-06-17） | 开源中国 Wine 页（Amstadt 1993、Windows 3.1、Julliard 接手）✅；维基 Wine：「Version 1.0 was released on 17 June 2008, after 15 years of development」✅；Julliard 至今仍是负责人【待核：2026 现状】 | 承 0：那个「老三岁」的东西是什么 | 模型补 |
+| 2 | **Wine 不是 Valve 养的** | 养着 Julliard 和一批 Wine 开发者的是一家叫 CodeWeavers 的公司，靠卖 CrossOver 过日子；Wine 本身是 LGPL 的开源项目，谁都能拿 | 维基 Wine：「The main corporate sponsor of Wine is CodeWeavers, which employs Julliard…」✅；LGPL 自 2002-03 ✅ | 承 1：钱从哪来 | 模型补 |
+| 3 | **1998–2002 · 另一条路走死过一回** | 在 Wine 之外，有人试过「一款一款把游戏移植到 Linux」：Loki，一个前律师开的公司，三年移植了约 20 款，2001 年 8 月破产；留下的工具（SDL、OpenAL）后来成了 Linux 游戏的底子 | 维基 Loki Entertainment：1998-11-09 成立、Scott Draeker、约 20 款、2001-08 破产、2002-01-31 关门 ✅【待核：国内查不到，中文无报道】 | 并列于 1：两条路，一条是等移植，一条是兼容层 | 模型补 ⚠️ 偏硬核，可整拍删 |
+| 4 | **2012–2015 · Valve 进场，先走了那条死路**（一句带过） | EP04 讲过：Newell 怕 Windows 关门，2013 年 Steam 上 Linux，2015 年 Steam Machines 要开发者出 Linux 版，没人出 | EP04 幕一、幕二 ✅（已核）；新浪 2013-09-25「曝 Valve 开源游戏系统 SteamOS」：Newell「更喜欢 Linux」✅ | 转折：Valve 一开始没想到 Wine | 作者（EP04 已成稿） |
+| 5 | **2016 · 没人知道的两年** | Valve 从 2016 年起就在付钱给 CodeWeavers 改 Wine（vkd3d、全屏、手柄、esync），两年后才公开 | Valve 2018-08-21 公告（WineHQ 新闻 2018-08-23 转）：「working with CodeWeavers since 2016」【待核：公告原页存快照】 | 转折：换路，而且是悄悄换 | 模型补 |
+| 6 | **2018 年 1 月 · 一个人的业余项目** | DXVK 由 Philip Rebohle 一个人做，2018-01-14 公开；Valve 当月就找上门，2 月起付他工资。它干的事是把游戏的 DirectX 画面指令翻成 Vulkan，Proton 能跑游戏，这块是关键 | 维基 DXVK：作者、2018-01-14、「swiftly approached by Valve」✅；GamingOnLinux 2018-08-21：「employed the DXVK developer since February 2018」🟡 外媒；IT之家写 DXVK 是「基于 Vulkan 的翻译层」✅ | 递进：第二块也不是 Valve 做的 | 模型补 |
+| 7 | **2018 年 8 月 21 日 · Valve 做的是一个开关** | Valve 把 Wine、DXVK、vkd3d 打成一包叫 Proton，装进 Steam 客户端，设置里勾一下就行；首批 27 款；代码开源放 GitHub | EP04 幕三 ✅（27 款已核）；3DM 2018-08-24 写「加入了一个改良版的 Wine，叫做 Proton」✅；⚠️ 3DM 写 29 款，EP04 核过是 27；Proton GitHub：BSD-3，Wine 部分 LGPL ✅ | 承 5、6：三块拼起来 | 模型补 |
+| 8 | **2019 · 钱没只花在自家** | Proton 改出来的东西回流进 Wine：CodeWeavers 的 Andrew Eikum 2019-03 说，166 个补丁已并回 Wine 主线，Proton 自带的补丁从 380 个降到 214 个 | GamingOnLinux 2019-03-27 ✅（外媒，CodeWeavers 原话）🟡 国内无报道 | 转折：观众那句「Valve 出了很多力」，力在哪 | 模型补 |
+| 9 | **2022 · 一台机器，一个志愿者发行版** | Steam Deck 2022-02 发售；SteamOS 3 底下是 Arch Linux（2002 年起志愿者维护）；桌面模式是 KDE Plasma；游戏模式那套界面是 Valve 自己写的 gamescope，也开源 | 维基 Valve：2022-02 Deck ✅；IT之家 2024-09-30「Steam Deck 使用基于 Arch Linux 的 SteamOS 3」✅；知乎／少数派：桌面模式 KDE Plasma、游戏模式基于 gamescope ✅（🟡 非媒体） | 递进：系统这层也是搭在别人地基上 | 模型补 |
+| 10 | **2024 年 9 月 · Valve 给 Arch 出钱** | Valve 资助 Arch 两件事：构建服务基础设施、安全签名飞地；Arch 开发者说这让他们不再受志愿者空闲时间限制 | IT之家 2024-09-30 ✅（新浪、网易、腾讯转载同文）；Arch 官方公告 2024-09【待核：存快照】 | 承 9 | 模型补 |
+| 11 | **这层东西不是 Valve 的私产** | Proton 开源，不装 Steam 也能用：Heroic、Lutris 拿它跑 Epic、GOG 买的游戏；Bazzite 这种第三方系统预装它。你在别处买的游戏靠它跑，Valve 不收钱；Steam 哪天变了，这层还在 | 少数派 2024-06-20：Heroic「支持 Epic、GOG 和 Amazon」、Bazzite、「GameScope 与 Proton 直接开源并且所有 Linux 系统都可以直接用」✅；维基 Proton「third-party forks can be manually installed」✅ | 转折：对玩家意味着什么（本片的消费者落点） | **模型补，立场要作者定** |
+| 12 | **2026 · 现在** | 3 月 Linux 在 Steam 份额首破 5%（SteamOS 是其中最大一块）；9 月 1 日 Steam Deck「可玩及已验证」破 3 万款；Unity 在 GDC 2026 宣布原生适配 SteamOS；联想 Legion Go S 是第一台官方授权的第三方 SteamOS 掌机。风向变了：现在是引擎来适配 SteamOS | 新浪 2026-04-03（Linux 5.33%）✅、IT之家 2026-05-04（4 月回落 4.52%，⚠️ 要说清是单月）；IT之家 2026-09-01（30,023 款）✅；新浪 2026-03-14（Unity）✅；IT之家 823/100（Legion Go S）✅ | 递进：结果 | 模型补 |
+| 13 | **收尾（事实收尾，不要金句）** | 候选 a：Wine 还在更新，Julliard 从 1994 年管到现在【待核：取数日期的最新版本号】；候选 b：回到评论区那句——Valve 出了很多力，底子是别人的 | —— | —— | **作者定** |
+
+### 建议补（不在表里）
+
+- **作者亲历**：有没有自己装过 SteamOS／Bazzite，或者在 Deck 上跑过某款 Windows 游戏的经历。有的话放拍 11，一句就够，比任何数据管用。【待补】
+- **画面侧**：EP04 的「租客盖房子」那套比喻不进旁白；要接，交给画面（EP04 视觉系统里有现成的房子／地板元素）。
+
+### 没用上的（查到了，先不进表）
+
+- Newell 2013 LinuxCon 演讲（「开放系统是游戏的未来」）：一手是 LWN／GamingOnLinux，国内只有新浪 2013 一篇侧面提到。EP04 已经用了他 2012 的话，再引一次重复。
+- Valve 对内核、Mesa 显卡驱动的「upstream everything」（Phoronix）：全是外媒，国内只有知乎在讨论。太硬核，拍 10 提一句「对内核与驱动的改进也直接贡献到上游」（少数派原句）就够。
+- 游民 2026-07「D 加密再失一城！173 款游戏已兼容 Linux」、IT之家「SteamOS 3.8.7 首次支持英特尔芯片掌机」：是「现在」的佐证，拍 12 塞不下。
+
+---
+
+## 写的时候去哪查
+
+通用规矩（`script-draft` 第三节）：国内两家以上一致才用；国内只管「怎么说」，数字、「最」字句、原话回一手核；IT之家经常 403，同一篇换新浪／网易／腾讯转载；查到就存快照进 `08_核查与来源/_原文快照/`。
+
+| 拍 | 要查什么 | 国内优先（按顺序） | 国内查不到再查 | 已查到什么 |
+|---|---|---|---|---|
+| 0、1、2 | Wine 的来历、「不是模拟器」、1.0 日期、Julliard、CodeWeavers | 开源中国 `oschina.net/p/wine` → IT之家搜「Wine 10.0 发布」「Wine 9.0」（每个大版本都报）→ 知乎 | WineHQ 官网（有反爬，用 Mac 浏览器开）、维基 Wine | 开源中国：Amstadt 1993、Windows 3.1、Julliard 接手 ✅；IT之家历年 Wine 版本稿存在 |
+| 3 | Loki 的事 | 机核搜「Linux 游戏史」、知乎 | 维基 Loki Entertainment | 国内一条都没搜到 → 中文名没有，只报「一个前律师开的公司」 |
+| 4 | EP04 已核，不重查 | —— | —— | EP04 `08_核查与来源/核查记录_脚本v5待核_20260916.md` |
+| 5、7 | Valve 2018 公告原话（CodeWeavers since 2016、27 款、开源） | 3DM 2018-08-24 `news/201808/3743973.html`、新浪游戏 2018-08-24（同文）、IT之家 | Steam 公告原页（steamcommunity 221410 公告，容器打不开，Mac 浏览器开）、WineHQ 新闻 2018-08-23 | 3DM 原句已取（见术语表）；⚠️ 3DM 写 29 款 |
+| 6 | DXVK 作者、Valve 雇他 | IT之家搜「DXVK」（2.1、3.0 都报过，用词「翻译层」）、开源中国 DXVK 3.0 | 维基 DXVK、GamingOnLinux 2018-08-21 | 作者名国内没译名，只写「一个叫 Philip Rebohle 的开发者」或只报「DXVK 的作者」 |
+| 8 | 补丁回流 Wine | 国内无 | GamingOnLinux 2019-03-27（CodeWeavers 原话） | 数字 166／380／214 ✅ |
+| 9 | Deck 发售、Arch、KDE、gamescope | IT之家「SteamOS 3.0 民间魔改版」（616/459）、机核「我给 AYANEO 装了 SteamOS 3.0」（153746）、少数派 89743、知乎「SteamDeck 入门 04 桌面模式」 | Valve Deck 官方页 | 「游戏模式／桌面模式」「基于 Arch Linux」「KDE Plasma」国内写法一致 ✅ |
+| 10 | Valve 资助 Arch | IT之家 799/450（403 时用新浪 `doc-incqwuta2991102`）、腾讯 20240930A0193400 | Arch 官网 news「Arch Linux and Valve collaboration」 | 「构建服务基础设施」「安全签名飞地」✅（IT之家译法，照用） |
+| 11 | Proton 不经 Steam 用、Bazzite、Heroic、Lutris | 少数派 89743（网易、腾讯有转载）、知乎「第三方 proton 兼容层仓库地址收录」、B 站实测视频 | Proton GitHub README、维基 Proton | 少数派原句已取 |
+| 12 | 2026 的数 | IT之家「Steam 2026 年 N 月软硬件调查报告」（每月 1–4 日发）、新浪 2026-04-03、IT之家 996/911（30,023 款）、新浪 2026-03-14（Unity）、IT之家 823/100（Legion Go S） | Steam 官方硬件调查页（当月取数，写日期） | 全部 ✅，取数日期要写进稿 |
+| 13 | Wine 最新版本号 | IT之家搜「Wine 发布」取最近一篇 | WineHQ | 【待核】录音当天再取一次 |
+
+🔴 **红线**：B 站 `steamos` 词族底下有「学习版」（盗版），查素材时不点、不引、不截。
+
+---
+
+## 术语表（草稿，开期后拆出去）
+
+| 概念 | 旁白用 | 不用 | 依据 | 状态 |
+|---|---|---|---|---|
+| Wine／Proton 这类东西 | 兼容层 | 转译层（港台）、模拟器 | IT之家「Proton 9.0-1 兼容层」、3DM 2018「为 Windows 游戏提供兼容性」、少数派「Windows 兼容层」；Wine 官方全称就是「不是模拟器」 | ✅ |
+| DXVK 这类东西 | 翻译层（只在说 DXVK 时） | —— | IT之家 2023-01-28「基于 Vulkan 的翻译层 DXVK」 | 🟡 只有 IT之家一家，也可统一叫兼容层 |
+| Proton 和 Wine 的关系 | 基于 Wine／从 Wine 分出来的 | Wine 的分叉（开发者黑话） | 3DM 2018「改良版的 Wine，叫做 Proton」「基于 Wine 修改版」；IT之家「基于 Wine 9.0」；「分出来的」是作者回复里的说法 | ✅ |
+| 兼容层干的事 | 把游戏调用 Windows 的那些接口实时转成 Linux 能识别的 | 翻译系统调用 | EP04 幕三已定稿、作者认可；EP04 核查记录「Proton 术语」条 | ✅ 沿用 |
+| 开关 | Steam Play | —— | 国内直接写 Steam Play；客户端中文界面那行字【待核：作者截一张 Steam 设置页】 | 🟡 |
+| Deck 两种界面 | 游戏模式／桌面模式 | —— | 知乎、少数派、机核一致 | ✅ |
+| SteamOS 3 的底子 | 基于 Arch Linux | —— | IT之家 2024-09-30 | ✅ |
+| Valve 给 Arch 的钱 | 构建服务基础设施、安全签名飞地 | —— | IT之家 2024-09-30 | ✅ 硬译，但是通稿用词，照用 |
+| 改动交回原项目 | 贡献到上游／并回主线 | —— | 少数派 2024-06-20「直接贡献到上游的」 | 🟡 一处 |
+| Deck 兼容标记 | 已验证／可玩／不支持 | 认证 | IT之家 2026-09-01「可玩及已验证」；游民 2023 写「已认证」 | 🟡 两家不一，按 Steam 中文界面定 |
+| Steam 的月度统计 | Steam 软硬件调查报告 | 硬件调查 | IT之家每月标题 | ✅ |
+| 联想那台 | 首款获授权的第三方 SteamOS 掌机 | —— | IT之家 823/100 | ✅ |
+
+人名：
+
+| 人 | 旁白用 | 依据 | 状态 |
+|---|---|---|---|
+| Gabe Newell | Gabe Newell（EP04 口播已用英文名；玩家叫 G胖） | EP04 定稿 | ✅ 沿用 |
+| Pierre-Loup Griffais | Griffais／「Valve 的工程师」 | EP04 定稿 | ✅ 沿用 |
+| Alexandre Julliard | 只报职务：「从 1994 年起管 Wine 的那个人」，字卡给英文名 | 国内无通行译名（开源中国直接写英文） | ✅ 按规矩只报职务 |
+| Bob Amstadt | 同上：「写它的第一个人」＋字卡英文名 | 同上 | ✅ |
+| Philip Rebohle | 「DXVK 的作者」＋字卡英文名 | 同上 | ✅ |
+| Scott Draeker（Loki） | 「一个前律师」 | 国内无报道 | ✅ |
+| Andrew Eikum（CodeWeavers） | 「CodeWeavers 的开发者」 | 国内无报道 | ✅ |
+
+---
+
+## 30 秒开场（草稿，作者审）
+
+> 让 Steam Deck 跑 Windows 游戏的那层东西，比 Valve 这家公司还老三岁。
+>
+> 上一期我说，Valve 自己在中间架了一层。评论区有人说我讲得太简单了。他说得对。
+>
+> 最底下那一块，1993 年就有了，当时要做的只有一件事：在 Linux 上打开 Windows 3.1 的程序。一群不在 Valve 上班的人干了二十五年，头十五年版本号一直没到 1.0。
+>
+> 2018 年，Valve 把它装进 Steam，加了一个开关。
+
+- 约 120 字，按 250 字／分钟是 29 秒。
+- 第一句就是悖论，10 秒内落钩；没有预告句，没有设问。
+- 事实对应：Wine 1993【待核首版日期】、Valve 1996-08-24 ✅、Wine 1.0 2008-06-17 ✅、Steam Play 2018-08-21 ✅。「二十五年」＝1993 到 2018。
+- 「他说得对」是作者在评论区已经认了的，放进片里等于把那条回复说给所有人听。
+- 备选第一句（不想从 Deck 起手的话）：**「2018 年 Valve 发布 Proton 的时候，它最核心的那部分已经二十五岁了。」**
+
+---
+
+## 一次问完（答了就能写）
+
+1. **拍 11 的立场**：「你在别处买的游戏靠它跑，Valve 不收钱；Steam 哪天变了，这层还在」——这是模型按本系列母题补的，要不要这么落，你定。
+2. **拍 3（Loki）要不要**：国内一个字都没有，全靠英文出处，而且偏硬核。删了不影响主线。
+3. **收尾选 a 还是 b**，或者你另给。
+4. **亲历**：有没有自己装过 SteamOS／Bazzite、在 Deck 上跑过哪款 Windows 游戏。没有就不写。
+
+改完说「可以写了」。
